@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "start-producer-direct-exchange": "tsx watch src/producer-direct-exchange.ts",
+    "start-producer-direct-exchange": "tsx watch src/direct-exchange/producer-direct-exchange.ts",
+    "start-consumer-direct-exchange": "tsx watch src/direct-exchange/consumer.ts",
+    "start-consumer-direct-exchange-second": "tsx watch src/direct-exchange/consumer-second.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
