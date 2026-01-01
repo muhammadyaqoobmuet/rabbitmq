@@ -1,1 +1,0 @@
-import ampq from "amqplib"
