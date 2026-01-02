@@ -6,6 +6,10 @@
     "start-producer-direct-exchange": "tsx watch src/direct-exchange/producer-direct-exchange.ts",
     "start-consumer-direct-exchange": "tsx watch src/direct-exchange/consumer.ts",
     "start-consumer-direct-exchange-second": "tsx watch src/direct-exchange/consumer-second.ts",
+    "start-producer-topic-exchange": "tsx watch src/topic-exchange/prodcuer.ts",
+    "start-consumer-topic-exchange": "tsx watch src/topic-exchange/consumer.ts",
+    "start-order-service-topic-exchange": "tsx watch src/topic-exchange/order-service.ts",
+    "start-payment-service-topic-exchange": "tsx watch src/topic-exchange/payment-service.ts",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
