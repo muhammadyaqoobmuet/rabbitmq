@@ -147,4 +147,3 @@ Message with routing key "red" → goes nowhere
 
 why do we create queues on consumer side
 -> where would we store the messages from producer that exchange sends ? right in queue thats why we create those
-
