@@ -10,7 +10,9 @@
     "start-consumer-topic-exchange": "tsx watch src/topic-exchange/consumer.ts",
     "start-order-service-topic-exchange": "tsx watch src/topic-exchange/order-service.ts",
     "start-payment-service-topic-exchange": "tsx watch src/topic-exchange/payment-service.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start-producer-fanout-exchange": "tsx watch src/fanout-exchnage/producer.ts",
+    "start-consumer-fanout-exchange": "tsx watch src/fanout-exchnage/consumer.ts"
   },
   "author": "",
   "license": "ISC",

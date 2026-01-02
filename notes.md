@@ -100,24 +100,29 @@ Topic Exchange allows routing messages to one or many queues based on wildcard p
 Fanout Exchange broadcasts messages to all queues bound to it, regardless of routing key. It is the simplest type of exchange and is used for scenarios where every consumer should receive every message (e.g., pub/sub, notifications, broadcasting events).
 
 **Key Points:**
+
 - Ignores routing keys completely.
 - Every queue bound to the exchange receives a copy of every message.
 - Great for broadcasting the same message to multiple consumers.
 
 **How it works:**
+
 1. Producer sends a message to the fanout exchange.
 2. Exchange forwards the message to all bound queues.
 3. All consumers listening to those queues receive the message.
 
 **Example in code:**
+
 - Producer: `src/fanout-exchnage/producer.ts`
 - Consumer: `src/fanout-exchnage/consumer.ts`
 
 **Benefits:**
+
 - Simple and efficient for broadcast scenarios.
 - No need to manage routing keys or patterns.
 
 **Summary:**
+
 > Use Fanout Exchange when you want to deliver every message to every consumer (e.g., real-time feeds, notifications, etc.).
 
 ---
