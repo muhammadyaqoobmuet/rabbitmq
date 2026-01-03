@@ -12,7 +12,9 @@
     "start-payment-service-topic-exchange": "tsx watch src/topic-exchange/payment-service.ts",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-producer-fanout-exchange": "tsx watch src/fanout-exchnage/producer.ts",
-    "start-consumer-fanout-exchange": "tsx watch src/fanout-exchnage/consumer.ts"
+    "start-consumer-fanout-exchange": "tsx watch src/fanout-exchnage/consumer.ts",
+    "start-producer-headers-exchange": "tsx watch src/headers-exchange/producer.ts",
+    "start-consumers-headers-exchange": "tsx watch src/headers-exchange/all-consumers.ts"
   },
   "author": "",
   "license": "ISC",
@@ -23,6 +25,7 @@
   "devDependencies": {
     "@types/amqplib": "^0.10.8",
     "tsx": "^4.21.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "concurrently": "^8.2.2"
   }
 }
