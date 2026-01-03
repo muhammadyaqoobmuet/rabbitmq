@@ -143,6 +143,45 @@ Message with routing key "blue" → goes to Q1
 Message with routing key "red" → goes nowhere
 ```
 
+
+---
+
+## Headers Exchange: Single Consumer File
+
+For the headers exchange, instead of running three separate consumer files for each notification type (like, comment, new video), you can use a single file to start all consumers at once.
+
+- See: `src/headers-exchange/all-consumers.ts`
+- This file contains an array of header objects, each representing a different consumer scenario.
+- It calls the consumer function for each set of headers, so all consumers run together.
+
+**How to use:**
+
+1. Start all consumers for the headers exchange with:
+	 ```sh
+	 npm run start-consumers-headers-exchange
+	 ```
+2. This will run all three consumers (like, comment, new video) in parallel from a single file.
+3. You can add or modify consumers by editing the array in `all-consumers.ts`.
+
+**Why?**
+
+- Easier to manage and scale consumers for different header conditions.
+- No need to run multiple terminal windows or scripts for each consumer.
+
+**Example code:**
+
+```ts
+import consumerOFHeadersExchange from "./consumer";
+
+const consumers = [
+	{ "x-match": "any", "notification-type": "liked-video", "content-type": "stream" },
+	{ "x-match": "all", "notification-type": "comment", "already-liked": true },
+	{ "x-match": "all", "notification-type": "new-video", "content-type": "video" }
+];
+
+consumers.forEach(headers => consumerOFHeadersExchange(headers));
+```
+
 # my dumb questions when i was learning
 
 why do we create queues on consumer side
