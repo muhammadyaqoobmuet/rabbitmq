@@ -143,7 +143,6 @@ Message with routing key "blue" → goes to Q1
 Message with routing key "red" → goes nowhere
 ```
 
-
 ---
 
 ## Headers Exchange: Single Consumer File
@@ -157,9 +156,9 @@ For the headers exchange, instead of running three separate consumer files for e
 **How to use:**
 
 1. Start all consumers for the headers exchange with:
-	 ```sh
-	 npm run start-consumers-headers-exchange
-	 ```
+   ```sh
+   npm run start-consumers-headers-exchange
+   ```
 2. This will run all three consumers (like, comment, new video) in parallel from a single file.
 3. You can add or modify consumers by editing the array in `all-consumers.ts`.
 
@@ -174,12 +173,20 @@ For the headers exchange, instead of running three separate consumer files for e
 import consumerOFHeadersExchange from "./consumer";
 
 const consumers = [
-	{ "x-match": "any", "notification-type": "liked-video", "content-type": "stream" },
-	{ "x-match": "all", "notification-type": "comment", "already-liked": true },
-	{ "x-match": "all", "notification-type": "new-video", "content-type": "video" }
+  {
+    "x-match": "any",
+    "notification-type": "liked-video",
+    "content-type": "stream",
+  },
+  { "x-match": "all", "notification-type": "comment", "already-liked": true },
+  {
+    "x-match": "all",
+    "notification-type": "new-video",
+    "content-type": "video",
+  },
 ];
 
-consumers.forEach(headers => consumerOFHeadersExchange(headers));
+consumers.forEach((headers) => consumerOFHeadersExchange(headers));
 ```
 
 # my dumb questions when i was learning
