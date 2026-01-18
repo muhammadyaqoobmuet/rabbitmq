@@ -1,8 +1,8 @@
-import ampq from "amqplib"
+import amqp from "amqplib"
 
 async function producer() {
 	try {
-		const connection = await ampq.connect('amqp://localhost')
+		const connection = await amqp.connect('amqp://localhost')
 		const channel = await connection.createChannel()
 		const EXCHANGE_NAME = "prority_extenge"
 		const TOPIC = "direct" // can be any topic

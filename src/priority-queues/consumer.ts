@@ -1,8 +1,8 @@
-import ampq from "amqplib"
+import amqp from "amqplib"
 
 async function consumer() {
 	try {
-		const connection = await ampq.connect('ampq://localhost')
+		const connection = await amqp.connect('amqp://localhost')
 		const channel = await connection.createChannel()
 		const QUQUE = 'prority_queue'
 		await channel.assertQueue(QUQUE, { durable: true, arguments: { 'x-max-priority': 10 } })
