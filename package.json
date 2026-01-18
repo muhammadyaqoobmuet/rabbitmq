@@ -14,7 +14,9 @@
     "start-producer-fanout-exchange": "tsx watch src/fanout-exchnage/producer.ts",
     "start-consumer-fanout-exchange": "tsx watch src/fanout-exchnage/consumer.ts",
     "start-producer-headers-exchange": "tsx watch src/headers-exchange/producer.ts",
-    "start-consumers-headers-exchange": "tsx watch src/headers-exchange/all-consumers.ts"
+    "start-consumers-headers-exchange": "tsx watch src/headers-exchange/all-consumers.ts",
+    "start-producer-priority-queues": "tsx watch src/priority-queues/producer.ts",
+    "start-consumer-priority-queues": "tsx watch src/priority-queues/consumer.ts"
   },
   "author": "",
   "license": "ISC",
