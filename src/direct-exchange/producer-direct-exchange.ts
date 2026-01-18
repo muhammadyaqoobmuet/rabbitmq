@@ -27,8 +27,6 @@ async function directExchangeProducer() {
 		await channel.assertQueue('subscribed_user', { durable: false }); // this is for another consumer
 		// now we have created queue and exchange  lets bind them // !why binding ??
 		// because this is the way it works it bind/connect them sends message its not magic
-
-
 		await channel.bindQueue(
 			'all_users',
 			EXCHANGE_NAME,
